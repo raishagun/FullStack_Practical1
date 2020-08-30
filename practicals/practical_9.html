@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Practical-9</title>
+
+<style>
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+html{
+    scroll-padding-top: 70px;
+    scroll-behavior: smooth;
+}
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+.header{
+    background-color: gray;
+    width: 100%;
+    height: 70px;
+    max-width: 1200px;
+    position: fixed;
+    top: 0;
+}
+.menu{
+    float:right;
+    padding: 0px 20px;
+    list-style: none;
+}
+.menu li{
+    display: inline-block;
+    line-height: 70px;
+}
+.menu li a {
+display: block;
+text-decoration: none;
+text-transform: uppercase;
+color: white;
+padding: 0px 20px;
+font-size: 20px;
+}
+.menu li a:hover{
+    color: black;
+    background-color: blanchedalmond;
+}
+.shoBtn, .hideBtn, #check{
+    line-height: 70px;
+    color: blanchedalmond;
+    display: none;
+    float: right;
+    font-size: 30px;
+    padding-right: 20px;
+}
+.banner{
+    height: 680px;
+    width: 100%;
+    margin-top: 90px;
+    margin-bottom: 15px;
+    display: flex;
+    font-size: 40px;
+    color: white;
+    background-image: url(../images/IMAGE1.jpg);
+    background-size: contain;
+    background-position: center;
+}
+.banner h2{
+    margin: 20px;
+    color:black;
+}
+.team{
+    width: 100%;
+    margin:15px auto;
+}
+.team::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.circle img{
+    height:250px;
+    width: 250px;
+    border-radius: 50%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+}
+/* .aboutus{
+
+} */
+.leftSide{
+    height:550px;
+    width: 50%;
+    background-color: gray;
+    float: left;
+    color: white;
+
+}
+.rightSide{
+    height: 550px;
+    width: 48%;
+    float:right;
+
+}
+.artical1{
+    height: 31%;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: black;
+      overflow: hidden;
+      background-image: url(../images/p1.jpg);
+}
+.artical2{
+    height: 31%;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: black;
+      overflow: hidden;
+      background-image: url(../images/p2.jpeg);
+}
+.artical3{
+    height: 31%;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: black;
+      overflow: hidden;
+      background-image: url(../images/p3.jpg);
+}
+.tech{
+    width: 100%;
+    margin:20px;
+}
+.tech::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+.box{
+float: left;
+margin-left: 30px;
+border-radius: 8px;
+background-color: lightslategray;
+width: 250px;
+height: 400px;
+}
+.box img{
+    width: 250px;
+    margin-bottom: 10px;
+    height: 168px;
+}
+.box a{
+    display: block;
+      margin: 0 auto;
+      text-align: center;
+      color: #fff;
+      background-color: red;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 8px;
+}
+.box a:hover{
+    background-color: blue;
+}
+#footer {
+      background-color: plum;
+      height: 100px;
+    }
+
+    #footer>p {
+      font-size: 16px;
+      color: black;
+      text-align: center;
+      padding: 20px;
+    }
+
+/* First breakpoint */
+@media (min-width: 801px) and (max-width: 1199px){
+    html{
+    scroll-padding-top: 70px;
+    scroll-behavior: smooth;
+}
+.container{
+    width: 100%;
+}
+.header{
+    background-color: gray;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0;
+}
+.menu{
+    float:right;
+    list-style: none;
+}
+.menu li{
+    display: inline-block;
+    line-height: 70px;
+}
+.menu li a {
+display: block;
+text-decoration: none;
+text-transform: uppercase;
+color: white;
+padding: 0px 20px;
+font-size: 20px;
+}
+.menu li a:hover{
+    color: black;
+    background-color: blanchedalmond;
+}
+.shoBtn, .hideBtn{
+    line-height: 70px;
+    color: blanchedalmond;
+    display: none;
+    float: right;
+    font-size: 30px;
+}
+#check{
+    position: absolute;
+    visibility: hidden;
+    z-index: -10;
+}
+.banner{
+    height: 680px;
+    width: 100%;
+    margin-top: 90px;
+    margin-bottom: 15px;
+    display: flex;
+    font-size: 40px;
+    color: white;
+    background-image: url(../images/IMAGE1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.banner h2{
+    margin: 20px ;
+    color:black;
+}
+.team::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.circle img {
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
+        background-color: goldenrod;
+        float: left;
+        margin-left: 15%;
+        margin-bottom: 20px;
+      }
+      .aboutus::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .leftSide {
+        width: 48%;
+        height: 550px;
+        background-color: gray;
+        float: left;
+        color: #fff;
+      }
+
+     
+
+      .rightSide {
+        width: 48%;
+        height: 550px;
+        float: right;
+        margin-right: 15px;
+      }
+
+      .artical1{
+    height: 31%;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: black;
+      overflow: hidden;
+      background-image: url(../images/p1.jpg);
+}
+.artical2{
+    height: 31%;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: black;
+      overflow: hidden;
+      background-image: url(../images/p2.jpeg);
+}
+.artical3{
+    height: 31%;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: black;
+      overflow: hidden;
+      background-image: url(../images/p3.jpg);
+}
+
+      /* --------- Technologies Used------------ */
+.tech{        
+    width: 100%;
+        margin: 15px auto;
+      }
+
+      .tech::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .box {
+        width: 40%;
+        float: left;
+        margin-left: 65px;
+        margin-bottom: 35px;
+        background-color: lightgrey;
+        border-radius: 8px;
+        height: 340px;
+      }
+
+      .box img {
+        width: 100%;
+      margin-bottom: 10px;
+      }
+      .box p {
+        margin: 10px;
+        font-size: 20px;
+        text-align: justify;
+        line-height: 30px;
+        color: white;
+      }
+
+      .box a {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        color: #fff;
+        background-color: red;
+        text-decoration: none;
+        padding: 10px;
+        
+        border-radius: 8px;
+      }
+      .box a:hover{
+background-color: blue;
+      }
+      #footer {
+        background-color: plum;
+        height: 100px;
+      }
+
+      #footer>p {
+        font-size: 16px;
+        color: black;
+        text-align: center;
+        padding: 20px;
+      }
+
+      h1 {
+        color: black;
+        font-size: 40px;
+        text-align: center;
+        padding: 25px 0px;
+      }
+
+}
+/* 2nd breakpoint */
+@media (max-width: 800px){
+    .header {
+        width: 100%;
+        background-color: grey;
+        position: fixed;
+        top: 0;
+        height: 70px;
+      }
+
+      .shoBtn {
+        display: block;
+      }
+
+      .menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        background-color: #333;
+        text-align: center;
+        padding: 80px 0px;
+        line-height: normal;
+        transition: 0.7s;
+      }
+
+      .menu li {
+        display: block;
+      }
+
+      .menu li a {
+        display: block;
+      }
+
+      #check:checked~.menu {
+        right: 0;
+      }
+
+      .hideBtn {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+      }
+.banner{
+    height: 350px;
+    width: 100%;
+    margin-top: 90px;
+    margin-bottom: 15px;
+    display: flex;
+    font-size: 40px;
+    color: white;
+    background-image: url(../images/IMAGE1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.banner h2{
+    margin: 20px ;
+    color:black;
+}
+.team{
+    width: 100%;
+}
+.team::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.circle img {
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
+        background-color: goldenrod;
+        float: left;
+        margin-left: 10%;
+        margin-bottom: 20px;
+      }
+      /* .aboutus::after {
+        content: '';
+        display: block;
+        clear: both;
+      } */
+       /* .aboutus{
+           display: flex;
+           flex-direction: row;
+           justify-content: center;
+       } */
+      .leftSide {
+        width: 100%;
+        /* order:1; */
+        height: 200px;
+        background-color: gray;
+        color: #fff;
+        margin-bottom: 20px;
+       
+      }
+
+     
+
+      .rightSide {
+        width: 100%;
+        height: 400px;
+        
+      }
+
+      .artical1{
+          /* order:2; */
+    height: 31%;
+    /* width: 100%; */
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: black;
+      overflow: hidden;
+      background-image: url(../images/p1.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+}
+.artical2{
+    height: 31%;
+    width: 100%;
+    /* order: 3; */
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: black;
+      overflow: hidden;
+      background-image: url(../images/p2.jpeg);
+      background-size: cover;
+      background-repeat: no-repeat;
+}
+.artical3{
+    height: 31%;
+    width: 100%;
+    /* order:4; */
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: black;
+      overflow: hidden;
+      background-image: url(../images/p3.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+}
+
+      /* --------- Technologies Used------------ */
+.tech{        
+    width: 100%;
+        margin: 15px auto;
+        
+     }
+
+      .tech::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .box {
+        width: 40%;
+        float: left;
+        margin-left: 50px;
+        margin-bottom: 35px;
+        background-color: lightgrey;
+        border-radius: 8px;
+        /* height: 340px; */
+      }
+      .box img {
+        width: 100%;
+      margin-bottom: 10px;
+      }
+      .box p {
+        margin: 10px;
+        font-size: 20px;
+        text-align: justify;
+        line-height: 30px;
+        color: white;
+      }
+
+      .box a {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        color: #fff;
+        background-color: red;
+        text-decoration: none;
+        padding: 10px;
+        
+        border-radius: 8px;
+      }
+      .box a:hover{
+background-color: blue;
+      }
+      #footer {
+        background-color: plum;
+        height: 100px;
+      }
+
+      #footer>p {
+        font-size: 16px;
+        color: black;
+        text-align: center;
+        padding: 20px;
+      }
+
+      h1 {
+        color: black;
+        font-size: 40px;
+        text-align: center;
+        padding: 25px 0px;
+      }
+}
+@media (max-width: 615px){
+    .container{
+        min-width: 320px;
+    }
+    
+    .header {
+        width: 100%;
+        background-color: grey;
+        position: fixed;
+        top: 0;
+        height: 70px;
+      }
+
+      .shoBtn {
+        display: block;
+      }
+
+      .menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        background-color: #333;
+        text-align: center;
+        padding: 80px 0px;
+        line-height: normal;
+        transition: 0.7s;
+      }
+
+      .menu li {
+        display: block;
+      }
+
+      .menu li a {
+        display: block;
+      }
+
+      #check:checked~.menu {
+        right: 0;
+      }
+
+      .hideBtn {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+      }
+.banner{
+    height: 250px;
+    width: 100%;
+    margin-top: 90px;
+    margin-bottom: 15px;
+    color: white;
+    background-image: url(../images/IMAGE1.jpg);
+    background-repeat: no-repeat;
+}
+.banner h2{
+    margin: 20px ;
+    color:black;
+}
+.team{
+    width: 100%;
+}
+.team::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.circle img {
+        height: 250px;
+        width: 50%;
+        border-radius: 50%;
+        background-color: goldenrod;
+        margin-left: 30%;
+        margin-bottom: 20px;
+      }
+      .leftSide {
+        width: 100%;
+        /* order:1; */
+        height: 200px;
+        background-color: gray;
+        color: #fff;
+        margin-bottom: 20px;
+       
+      }
+
+     
+
+      .rightSide {
+        width: 100%;
+        height: 400px;
+        
+      }
+
+      .artical1{
+          /* order:2; */
+    height: 31%;
+    /* width: 100%; */
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: black;
+      overflow: hidden;
+      background-image: url(../images/p1.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+}
+.artical2{
+    height: 31%;
+    /* width: 100%; */
+    /* order: 3; */
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: black;
+      overflow: hidden;
+      background-image: url(../images/p2.jpeg);
+      background-size: cover;
+      background-repeat: no-repeat;
+}
+.artical3{
+    height: 31%;
+    /* width: 100%; */
+    /* order:4; */
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: black;
+      overflow: hidden;
+      background-image: url(../images/p3.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+}
+
+      /* --------- Technologies Used------------ */
+.tech{        
+    width: 100%;
+        margin: 15px auto;
+        
+     }
+
+      .tech::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .box {
+        width: 80%;
+        /* float: left; */
+       margin-left:50px;
+       margin-right: 40px;
+        margin-bottom: 35px;
+        background-color: lightgrey;
+        border-radius: 8px;
+        height: 345px;
+      }
+      .box img {
+        width: 100%;
+      margin-bottom: 10px;
+      }
+      .box p {
+        margin: 10px;
+        font-size: 20px;
+        text-align: justify;
+        line-height: 30px;
+        color: white;
+      }
+
+      .box a {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        color: #fff;
+        background-color: red;
+        text-decoration: none;
+        padding: 10px;
+        
+        border-radius: 8px;
+      }
+      .box a:hover{
+background-color: blue;
+      }
+      #footer {
+        background-color: plum;
+        height: 100px;
+      }
+
+      #footer>p {
+        font-size: 16px;
+        color: black;
+        text-align: center;
+        padding: 20px;
+      }
+
+      h1 {
+        color: black;
+        font-size: 40px;
+        text-align: center;
+        padding: 25px 0px;
+      }
+}
+
+</style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <input type="checkbox" id="check"/>
+            <label for="check" class="shoBtn">
+                <i class="fa fa-bars"></i>
+            </label>
+            <ul class="menu">
+               <li><a href="#top">Home</a></li>
+               <li><a href="#about">About</a></li>
+               <li><a href="#team">Team </a></li>
+               <li><a href="#Technologies">Technologies</a></li>
+               <li><a href="#contact">Contact</a></li>
+            
+               <label for="check" class="hideBtn">
+                    <i class="fa fa-times"></i>
+               </label>
+            </ul>
+        </div>
+        <a name="top"></a>
+
+        <div class="banner">
+            <h2>Practical-9</h2>
+        </div>
+        <a name="team"></a>
+        <div class="team">
+            <h1 style="text-align: center;">Team Members</h1>
+            <div class="circle"><img src="../images/1.png"> </div>
+            <div class="circle"><img src="../images/2.png"> </div>
+            <div class="circle"> <img src="../images/3.png"></div>
+            <div class="circle"> <img src="../images/9.png"></div>
+        </div>
+        <div class="aboutus">
+            <a name="about"></a>
+            <h1 style="text-align:center">About Us</h1>
+            <div class="leftSide">
+                <div class="leftContent">
+                    <h2 style="padding: 10px; margin: 20px;">About Projects</h2>
+<p style="margin:20px;padding:10px;font-family:sans-serif;line-height: 30px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nisi asperiores fuga et sunt animi in reiciendis corrupti laudantium, reprehenderit tempore obcaecati impedit necessitatibus, pariatur neque omnis deserunt sapiente! Sit sed dolores, exercitationem laudantium maxime tempore odit. Quisquam enim totam possimus cum, culpa non delectus pariatur laudantium ad qui, tempora veritatis amet vero doloremque error similique nesciunt! Consequuntur cupiditate doloremque laborum placeat? Beatae odio iusto dicta illum eligendi commodi fuga excepturi laborum nisi laudantium dolorem repellat optio perferendis magnam, neque, quam non ratione tempore! At, temporibus et sequi eaque quam voluptates velit! Cupiditate porro animi fugit cum officia labore praesentium obcaecati dignissimos. Sequi unde deleniti maxime neque quos ratione vel?</p>
+                </div>
+            </div>
+            <div class="rightSide">
+                <div class="artical1"><h2>Project-1</h2></div>
+                <div class="artical2"><h2>Project-2</h2></div>
+                <div class="artical3"><h2>Project-3</h2></div>
+            </div>
+        </div>
+        <div class="tech">
+            <a name="Technologies"></a>
+            <h1 style="color: black;font-size: 40px;padding:25px 0px;text-align: center;">Technology Used</h1>
+            <div class="box">
+                <img src="../images/html.jpg" alt="html">
+                <h4 style="margin:0px 15px;text-align:center">Introduction to HTML</h4>
+                <p style="margin: 15px; font-size: 15px; text-align: justify;line-height: 25px;color:linen">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit,
+                    illum odio! Aperiam esse quia blanditiis quasi? Cum itaque
+                    recusandae consequuntur!</p>
+                    <a href="htmlBasics.html">Read More</a>
+            </div>
+            <div class="box">
+                <img src="../images/css.jpg" alt="html">
+                <h4 style="margin:0px 15px;text-align:center">Introduction to CSS</h4>
+                <p style="margin: 15px; font-size: 15px; text-align: justify;line-height: 25px;color:linen">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit,
+                    illum odio! Aperiam esse quia blanditiis quasi? Cum itaque
+                    recusandae consequuntur!</p>
+                    <a href="cssBasics.html">Read More</a>
+            </div>
+            <div class="box">
+                <img src="../images/bootstrap.jpg" alt="html">
+                <h4 style="margin:0px 15px;text-align:center">Introduction to Bootstrap</h4>
+                <p style="margin: 15px; font-size: 15px; text-align: justify;line-height: 25px;color:linen">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit,
+                    illum odio! Aperiam esse quia blanditiis quasi? Cum itaque
+                    recusandae consequuntur!</p>
+                    <a href="bootstrap.html">Read More</a>
+            </div>
+            <div class="box">
+                <img src="../images/javascript.jpg" alt="html">
+                <h4 style="margin:0px 15px;text-align:center">Introduction to HTML</h4>
+                <p style="margin: 15px; font-size: 15px; text-align: justify;line-height: 25px;color:linen">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit,
+                    illum odio! Aperiam esse quia blanditiis quasi? Cum itaque
+                    recusandae consequuntur!</p>
+                    <a href="javascript.html">Read More</a>
+            </div>
+        </div>
+        <a name="contact"></a>
+        <h1 style="text-align: center; padding: 15px; margin-top: 15px;top:2000px;">Contact</h1>
+        <div id="footer">
+            <p style="text-align: center; font-size: 20px;" >
+              Website Template for Practical-9 &copy;
+              <a href="https://beta-labs.in">Beta-labs</a><br /><br />
+              <a href="#top">Back to top</a>
+            </p>
+          </div>
+    </div>
+    
+</body>
+</html>

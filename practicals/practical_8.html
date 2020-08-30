@@ -11,30 +11,32 @@
     /* box-sizing: border-box; */
             scroll-behavior: smooth;
 }
+html{
+    scroll-padding-top: 70px;
+}
 .header{
     background-color:gray;
             height:70px;
             width: 100%;
             margin-bottom: 15px;
-            margin-left: 15px;
            display: flex;
-           justify-content: center;
+           justify-content:    center      ;   margin-left: 15px;  ;
            align-items: center;
             color: white;;
             font-size: 30px;
             position: fixed;
-            overflow: hidden;
             top: 0;
           
 }
 .banner{
     
     background-color:aqua;
-    height: 100vh;
+    height: 680px;
             margin-bottom:15px;
-        margin-top: 100px;
+        margin-top: 80px;
       margin-left: 15px;
         text-align: left;
+        display: flex;
         font-size:40px;
         color:white;
         background-image: url(../images/IMAGE1.jpg);
@@ -208,21 +210,27 @@ ul li{
 }
 ul li a{
     color: white;
-    display: block;
-    padding: 20px 20px;
+    padding: 15px 15px;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-}
+            font-size: 20px;
+            text-transform: uppercase;
+            } 
 ul li a:hover{
-    color: blue;
+    /* color:red;
+    padding: 10px;
+    border:blanchedalmond;
+    height:20px; */
+    color: black;
+            background-color: white;
+    
 }
 
     </style>
 </head>
 <body>
     <a name="top"></a>
-    <br>
         
 <div class="container">
     <div class="header">
@@ -237,8 +245,7 @@ ul li a:hover{
     <!-- <a name="about"></a> -->
     <div class="banner"><h1 style="text-align: left; top: 100px;">Practical 8</h1> </div>
     <a name="team"></a>
-    <br><br>
-        <br><br>
+   
     <h1 > Team Members</h1>
     <div class="section1">
         <div class="circle"><img src="../images/1.png"> </div>
@@ -247,8 +254,7 @@ ul li a:hover{
         <div class="circle"> <img src="../images/9.png"></div>
     </div>
     <a name="aboutus"></a>
-    <br><br>
-        <br><br>
+  
     <h1 >About Us</h1><br>
    
         <div class="content">
@@ -263,8 +269,7 @@ ul li a:hover{
         
         </div>
         <a name="technologies"></a>
-        <br><br>
-        <br><br>
+      
        <h1><b>Technologies Used</b></h1>
     <div class="section3">
         <div class="part1">
