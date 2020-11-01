@@ -4,93 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript Practical</title>
+    <title>JavaScript Counter</title>
     <style>
-        body{
-            background-color: grey;
-        }
-            * {
+        * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
-        
         }
         
-        #container {
-            height: 200px;
-            width: 500px;
-            margin: auto;
-            margin-top: 50px;
+        body {
+            background-color: gray;
+            padding: 50px;
         }
         
         h1 {
             text-align: center;
-            color:  rgb(57, 11, 184);
-            font-size: 3rem;
-        }
-        #plus {
-            height: 50px;
-            width: 50px;
-            margin-top: 30px;
-            margin-left: 90px;
-            font-size: 40px;
-            border-right: 2px solid black;
-            border-bottom: 2px solid black;
-            outline-style: none;
-            background-color: yellow;
-        }
-        #minus {
-            height: 50px;
-            width: 50px;
-            margin-top: 30px;
-            margin-left: 90px;
-            font-size: 40px;
-            border-right: 2px solid black;
-            border-bottom: 2px solid black;
-            outline-style: none;
-            background-color: yellow;
-        }
-        #number {
-            margin: auto;
-            margin-top: 50px;
-            margin-left: 90px;
-            text-align: center;
-            font-size: 50px;
-            font-weight: bold;
+            font-size: 4em;
+            margin-bottom: 50px;
             color: rgb(57, 11, 184);
-        } 
-       
+        }
+        
+        p {
+            display: inline-block;
+            text-align: center;
+            font-size: 3rem;
+            margin: 0 70px;
+            font-weight: bold;
+        color: rgb(57,11, 184);
+        }
+        
+        div {
+            text-align: center;
+        }
+        
+        button {
+            background-color: yellow;
+            line-height: 4rem;
+            width: 4rem;
+            font-size: 2rem;
+            border-right: 2px solid black;
+            border-bottom: 2px solid black;
+            outline-style: none;
+        }
     </style>
 </head>
 
 <body>
-
-    <div id="container">
-
-        <h1>COUNTER</h1>
-        <button id="minus" disabled>-</button> <span id="number">0</span>
-        <button id="plus">+</button>
+    <h1>Counter</h1>
+    <div>
+        <button id="minus" onclick="decrement()">-</button>
+        <p id="num">0</p>
+        <button id="plus" onclick="increment()">+</button>
     </div>
 
+
     <script>
-        let add = document.getElementById('plus');
-        let sub = document.getElementById('minus');
-        let int = document.getElementById('number');
-        let num = 0;
+        var number = document.getElementById("num");
+        var btn_minus = document.getElementById("minus");
+        var btn_plus = document.getElementById("plus");
 
-        add.addEventListener('click', function() {
-            sub.disabled = false;
-            num += 1;
-            int.innerHTML = num;
-        })
+        count = 0;
+        if (count == 0) {
+            btn_minus.disabled = true;
+        }
 
-        sub.addEventListener('click', function() {
-            num -= 1;
-            int.innerHTML = num;
-            if (num == 0) {
-                sub.disabled = true;
+        function decrement() {
+            if (count > 0) {
+                number.innerHTML = --count;
             }
-        })
+            if (count > 0) {
+                btn_minus.disabled = false;
+            } else {
+                btn_minus.disabled = true;
+            }
+        }
+
+        function increment() {
+            number.innerHTML = ++count;
+            if (count > 0) {
+                btn_minus.disabled = false;
+            } else {
+                btn_minus.disabled = true;
+            }
+        }
     </script>
 </body>
 
